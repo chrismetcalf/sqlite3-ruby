@@ -711,7 +711,6 @@ static VALUE collation(VALUE self, VALUE name, VALUE comparator)
   return self;
 }
 
-#ifdef HAVE_SQLITE3_LOAD_EXTENSION
 /* call-seq: db.load_extension(file)
  *
  * Loads an SQLite extension library from the named file. Extension
@@ -737,9 +736,7 @@ static VALUE load_extension(VALUE self, VALUE file)
 
   return self;
 }
-#endif
 
-#ifdef HAVE_SQLITE3_ENABLE_LOAD_EXTENSION
 /* call-seq: db.enable_load_extension(onoff)
  *
  * Enable or disable extension loading.
@@ -763,7 +760,6 @@ static VALUE enable_load_extension(VALUE self, VALUE onoff)
 
   return self;
 }
-#endif
 
 #ifdef HAVE_RUBY_ENCODING_H
 static int enc_cb(void * _self, int UNUSED(columns), char **data, char **UNUSED(names))
